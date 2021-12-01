@@ -1,0 +1,47 @@
+spring: 
+  profiles: default
+
+server:  
+  port: 8080
+  max-http-header-size: 20KB
+  
+    
+info: 
+  component: Microservicio para la funcionalidad de static login
+
+
+    
+logging:
+  file:
+    name: msapop-staticlogin.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework: INFO
+    mx.gob.imss.cit.apop: ${APOP_LOG_LEVEL}
+
+---
+spring: 
+  profiles: local
+  
+           
+server:  
+  port: 9005
+  max-http-header-size: 20KB
+  
+
+    
+info: 
+  component: Microservicio para la funcionalidad de static login
+
+logging:
+  file:
+    name: logs/msapop-staticlogin.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework: INFO
+    mx.gob.imss.cit.apop: DEBUG
+
